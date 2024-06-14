@@ -1,13 +1,13 @@
-import { FormEvent, useEffect, useState } from "react"
-import { useMultiStepForm } from "../hooks/useMultistepForm"
+import { FormEvent, useContext, useEffect, useState } from "react";
+import { useMultiStepForm } from "../hooks/useMultistepForm";
 import { useNavigate } from 'react-router-dom';
-import NameForm from "../components/NameForm"
-import EmailForm from "../components/EmailForm"
-import NumberForm from "../components/NumberForm"
-import Summary from "../components/Summary"
-import SalaryForm from "../components/SalaryForm"
-import SuccesWindow from "../components/SuccesWindow"
-import ErrorWindow from "../components/ErrorWindow";
+import NameForm from "../components/NameForm";
+import EmailForm from "../components/EmailForm";
+import NumberForm from "../components/NumberForm";
+import Summary from "../components/Summary";
+import SalaryForm from "../components/SalaryForm";
+import SuccesWindow from "../components/SuccesWindow";
+import { FormsContext } from "../context/FormsContext";
 
 type FormData = {
     fullName: string
@@ -23,6 +23,7 @@ const INITIAL_DATA: FormData = {
     salary: ""
 }
 
+
 function Form() {
     const [data, setData] = useState<FormData>(() => {
     const savedData = localStorage.getItem("formData");
@@ -30,7 +31,13 @@ function Form() {
   });
     const [isFinished, setIsFinished] = useState(false);
     const navigate = useNavigate();
-    const [isSalarySelected, setIsSalarySelected] = useState<boolean | null>(null);
+    const context = useContext(FormsContext);
+    if (!context) {
+        throw new Error('SomeComponent must be used within a FormsContextProvider');
+    }
+
+    const {isNumberValid, setIsNumberValid} = context;
+  
 
   useEffect(() => {
     localStorage.setItem("formData", JSON.stringify(data));
@@ -55,17 +62,19 @@ function Form() {
         e.preventDefault();
         
         if (!isLastStep) return next();
-        console.log(data.salary)
+
         if (data.salary === "") {
             alert("Please, select your salary before submitting")
+        } else if (!isNumberValid) {
+            alert("Please, enter valid phone number")
         } else {
             setIsFinished(true);
             setData(INITIAL_DATA);
             setTimeout(() => {
                 navigate("/");
                 setIsFinished(false);
-            }, 1500); 
-            setIsSalarySelected(null);
+            }, 1500);
+             
         }
         
       }

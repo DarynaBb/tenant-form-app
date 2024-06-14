@@ -1,7 +1,7 @@
 import { PhoneInput } from 'react-international-phone';
 import 'react-international-phone/style.css';
 import { PhoneNumberUtil } from 'google-libphonenumber';
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { FormsContext } from '../context/FormsContext';
 
 
@@ -30,9 +30,13 @@ function NumberForm({phone, updateFields}: NumberFormProps) {
     }
 
   const { isNumberValid, setIsNumberValid } = context;
+
+  useEffect(() => {
+    setIsNumberValid(isPhoneValid(phone));
+  }, [phone])
+  
   
 
-  setIsNumberValid(isPhoneValid(phone));
   return (
     <>
         <p>Phone number</p>

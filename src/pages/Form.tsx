@@ -1,10 +1,13 @@
 import { FormEvent, useEffect, useState } from "react"
 import { useMultiStepForm } from "../hooks/useMultistepForm"
+import { useNavigate } from 'react-router-dom';
 import NameForm from "../components/NameForm"
 import EmailForm from "../components/EmailForm"
 import NumberForm from "../components/NumberForm"
 import Summary from "../components/Summary"
 import SalaryForm from "../components/SalaryForm"
+import SuccesWindow from "../components/SuccesWindow"
+import ErrorWindow from "../components/ErrorWindow";
 
 type FormData = {
     fullName: string
@@ -25,6 +28,9 @@ function Form() {
     const savedData = localStorage.getItem("formData");
     return savedData ? JSON.parse(savedData) : INITIAL_DATA;
   });
+    const [isFinished, setIsFinished] = useState(false);
+    const navigate = useNavigate();
+    const [isSalarySelected, setIsSalarySelected] = useState<boolean | null>(null);
 
   useEffect(() => {
     localStorage.setItem("formData", JSON.stringify(data));
@@ -41,14 +47,27 @@ function Form() {
       <EmailForm {...data} updateFields={updateFields}/>, 
       <NumberForm {...data} updateFields={updateFields}/>,
       <SalaryForm {...data} updateFields={updateFields}/>, 
-      <Summary {...data} />
+      <Summary {...data} updateFields={updateFields}/>
 
     ])
 
     function onSubmit(e:FormEvent) {
         e.preventDefault();
+        
         if (!isLastStep) return next();
-        alert ("Successfull Account Creation")
+        console.log(data.salary)
+        if (data.salary === "") {
+            alert("Please, select your salary before submitting")
+        } else {
+            setIsFinished(true);
+            setData(INITIAL_DATA);
+            setTimeout(() => {
+                navigate("/");
+                setIsFinished(false);
+            }, 1500); 
+            setIsSalarySelected(null);
+        }
+        
       }
 
   return (
@@ -61,14 +80,16 @@ function Form() {
         borderRadius: ".5rem",
         fontFamily: "Arial"
        }}>
-          <form onSubmit={onSubmit} action="">
+          <form className={isFinished ? "hidden" : "block"} onSubmit={onSubmit} action="">
             <div style={{position: "absolute", top: ".5rem", right: ".5rem"}}>
-            {/* <ul style={{display: "flex"}}>
-                        {steps.map((step, index) => (
-                          <li key={index}  className="">{index + 1}</li>
-                        ))}
-                      </ul> */}
-                    
+             <progress
+                      aria-label="loading"
+                      id="p02g"
+                      max={steps.length}
+                      value={currentStepIndex + 1}
+                      className="mr-[10px] ml-[10px] h-[10px] w-full overflow-hidden bg-slate-100 [&::-webkit-progress-bar]:bg-slate-100 [&::-webkit-progress-value]:bg-[#69CA61]"
+                    >{currentStepIndex + 1} / {steps.length}</progress> 
+          {currentStepIndex + 1} / {steps.length}  
         </div>
         {step}
         <div style={{ marginTop: "1rem", display: "flex", gap: ".5rem", justifyContent: "flex-end" }}>
@@ -76,6 +97,9 @@ function Form() {
           <button type="submit">{isLastStep ? "Finish" : "Next"}</button>
         </div> 
       </form>
+      <div className={isFinished ? "block" : "hidden"}>
+            <SuccesWindow />
+        </div>
    </div>
   )
 }

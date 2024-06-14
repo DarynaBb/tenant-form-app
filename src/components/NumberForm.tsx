@@ -14,7 +14,7 @@ function NumberForm({phone, updateFields}: NumberFormProps) {
   return (
     <>
         <p>Phone number</p>
-        <PhoneInput defaultCountry="de" placeholder="Enter your phone number" value={phone} onChange={(value) => updateFields({ phone: value })}/>
+        <PhoneInput required defaultCountry="de" disableDialCodePrefill={true} placeholder="Enter your phone number" value={phone} onChange={(value) => updateFields({ phone: value })}/>
     </>
   )
 }

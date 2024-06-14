@@ -9,6 +9,7 @@ type SalaryFormProps = UserData & {
 function SalaryForm({salary, updateFields}:SalaryFormProps) {
   return (
     <fieldset>
+        <legend>Salary (per month, EUR):</legend>
         <div>
             <input type="radio" value="0-1000" checked={salary === "0-1000"} onChange={e => updateFields({salary: e.target.value})} />
             <label htmlFor="">0 - 1.000</label>
@@ -26,8 +27,8 @@ function SalaryForm({salary, updateFields}:SalaryFormProps) {
             <label htmlFor="">3.000 - 4.000</label>  
         </div>
         <div>
-        <input type="radio" value="more-than-4000" checked={salary === "more-than-4000"} onChange={e => updateFields({salary: e.target.value})}/>
-            <label htmlFor="">Mehr als 4.000</label>  
+        <input type="radio" value="More than 4000" checked={salary === "More than 4000"} onChange={e => updateFields({salary: e.target.value})}/>
+            <label htmlFor="">More than 4.000</label>  
         </div>
     </fieldset>
   )

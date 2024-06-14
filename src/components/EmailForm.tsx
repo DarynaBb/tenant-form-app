@@ -8,10 +8,10 @@ type EmailFormProps = UserData & {
 
 function EmailForm({email, updateFields}:EmailFormProps) {
   return (
-    <>
+    <div>
         <label htmlFor="">Email</label>
         <input autoFocus required type="text" placeholder="Enter your email" value={email} onChange={e => updateFields({email: e.target.value})}/>
-    </>
+    </div>
   )
 }
 

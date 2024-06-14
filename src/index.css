@@ -29,8 +29,14 @@ ul {
 }
 
 .bg-transition {
-  transition: background-color 1s linear;
+  transition: background-color 0.7s linear;
 }
+
+input[type='radio'] {
+  accent-color: #664DE5;
+}
+
+
 
 @layer utilities {
   .max-container {

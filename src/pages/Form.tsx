@@ -80,29 +80,23 @@ function Form() {
       }
 
   return (
-    <div style={{
-        position: "relative",
-        background: "white",
-        border: "1px solid black",
-        padding: "2rem",
-        margin: "1rem",
-        borderRadius: ".5rem",
-        fontFamily: "Arial"
-       }}>
-          <form className={isFinished ? "hidden" : "block"} onSubmit={onSubmit} action="">
+    <section className="max-container padding-container">
+        <form className={`${isFinished ? "hidden" : "block"} mt-[100px]`} onSubmit={onSubmit} action="">
             <div>
                 <ProgressBar steps={steps} currentStepIndex={currentStepIndex} />
             </div>
-            {step}
-            <div style={{ marginTop: "1rem", display: "flex", gap: ".5rem", justifyContent: "flex-end" }}>
+            <div className="flex justify-center">
+                {step}
+            </div>
+            <div className="flex gap-5">
                 {!isFirstStep && <button type="button" onClick={back}>Back</button>}
                 <button type="submit">{isLastStep ? "Finish" : "Next"}</button>
             </div> 
         </form>
-      <div className={isFinished ? "block" : "hidden"}>
+        <div className={isFinished ? "block" : "hidden"}>
             <SuccesWindow />
         </div>
-   </div>
+   </section>
   )
 }
 

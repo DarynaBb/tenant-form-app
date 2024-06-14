@@ -3,6 +3,7 @@ import 'react-international-phone/style.css';
 import { PhoneNumberUtil } from 'google-libphonenumber';
 import { useContext, useEffect } from 'react';
 import { FormsContext } from '../context/FormsContext';
+import FormWrapper from './FormWrapper';
 
 
 type UserData = {
@@ -39,9 +40,11 @@ function NumberForm({phone, updateFields}: NumberFormProps) {
 
   return (
     <>
-        <p>Phone number</p>
-        <PhoneInput required defaultCountry="de" disableDialCodePrefill={true} placeholder="Enter your phone number" value={phone} onChange={(value) => updateFields({ phone: value })}/>
-        {!isNumberValid && <div style={{ color: 'red' }}>Phone is not valid</div>}
+        <FormWrapper title="Phone">
+          <PhoneInput className='outline-primary-pale' required defaultCountry="de" disableDialCodePrefill={true} placeholder="Enter your phone number" value={phone} onChange={(value) => updateFields({ phone: value })}/>
+          {!isNumberValid && <div className='mt-[10px] text-red-500'>Phone is not valid</div>}
+        </FormWrapper>
+        
     </>
   )
 }

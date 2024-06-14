@@ -26,7 +26,7 @@ function Summary({fullName, email, phone, salary, updateFields}: SummaryDataProp
   }
 
   return (
-    <section>
+    <section className="">
       <p>Check your information:</p>
       {isEditing ? 
         <NameForm fullName={fullName} updateFields={updateFields} /> 

@@ -22,7 +22,7 @@ const INITIAL_DATA: FormData = {
     fullName: "",
     email: "",
     phone: "",
-    salary: ""
+    salary: "0-1000"
 }
 
 

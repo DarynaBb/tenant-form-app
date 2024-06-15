@@ -9,6 +9,8 @@ import SalaryForm from "../components/SalaryForm";
 import SuccesWindow from "../components/SuccesWindow";
 import { FormsContext } from "../context/FormsContext";
 import ProgressBar from "../components/ProgressBar";
+import Button from "../components/Button";
+import confetti from "https://esm.run/canvas-confetti@1";
 
 
 type FormData = {
@@ -70,17 +72,21 @@ function Form() {
         } else if (!isNumberValid) {
             alert("Please, enter valid phone number")
         } else {
+          confetti({
+            particleCount: 150,
+            spread: 60
+          });
             setIsFinished(true);
             setData(INITIAL_DATA);
             setTimeout(() => {
                 navigate("/");
                 setIsFinished(false);
-            }, 1500);  
+            }, 2000);  
         }
       }
 
   return (
-    <section className="max-container padding-container">
+    <section className="max-container padding-container h-screen">
         <form className={`${isFinished ? "hidden" : "block"} mt-[100px]`} onSubmit={onSubmit} action="">
             <div>
                 <ProgressBar steps={steps} currentStepIndex={currentStepIndex} />
@@ -88,9 +94,13 @@ function Form() {
             <div className="flex justify-center">
                 {step}
             </div>
-            <div className="flex gap-5">
-                {!isFirstStep && <button type="button" onClick={back}>Back</button>}
-                <button type="submit">{isLastStep ? "Submit" : "Next"}</button>
+            <div className="flex gap-5 justify-center mt-[40px]">
+                <div className="flex justify-end w-full gap-4">
+                {!isFirstStep && <Button type="button" onClick={back} text="Back"/>}
+                <Button type="submit" text={isLastStep ? "Submit" : "Next"}/>
+                
+                </div>
+                
             </div> 
         </form>
         <div className={isFinished ? "block" : "hidden"}>

@@ -22,8 +22,8 @@ function Input({
       <label
         className={`${
           position === "summary"
-            ? "text-[2em] mb-[10px]"
-            : "text-[2em] md:text-[3em] mb-[20px]"
+            ? "text-[1.6em] mb-[10px]"
+            : "text-[2em] md:text-[3em] mb-[10px] md:mb-[20px]"
         } open-sans font-semibold `}
       >
         {label}

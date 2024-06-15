@@ -19,7 +19,7 @@ function Home() {
         </div>
       </div>
       <div className="bg-primary basis-1/2 flex items-center">
-        <h1 className="uppercase text-slate-50 opens-sans font-bold text-[1.8em] md:text[2.4em] lg:text-[3em] p-[1em] sm:p-[2em] p-[2em]">
+        <h1 className="uppercase text-slate-50 opens-sans font-bold text-[1.8em] md:text[2.4em] lg:text-[3em] sm:p-[2em] p-[2em]">
           Welcome to Buena's Apartment Booking Service
         </h1>
       </div>

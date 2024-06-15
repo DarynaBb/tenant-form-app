@@ -1,19 +1,22 @@
-import { ReactNode } from "react"
+import { ReactNode, useContext } from "react"
+import { FormsContext } from "../context/FormsContext";
 
 type FormWrapperProps = {
-    title: string
+    title: string;
     children: ReactNode
 }
 
 function FormWrapper({title, children}:FormWrapperProps) {
-  return (
-        <div className="flex flex-col w-[50%] items-center">
-            <div className="flex flex-col items-start">
-                <h2 className=" text-[2rem] open-sans">{title}</h2>
-                {children}
-            </div>
-            
-         </div>  
+    const context = useContext(FormsContext);
+    if (!context) {
+        throw new Error('SomeComponent must be used within a FormsContextProvider');
+    }
+    const { isEditing } = context;
+  return (  
+         <div>
+             <h2 className="text-[2rem] open-sans">{title}</h2>
+             {children}
+         </div>
   )
 }
 

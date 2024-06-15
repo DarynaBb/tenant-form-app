@@ -33,7 +33,7 @@ ul {
 }
 
 .btn-transition {
-  transition: background-color 0.4s linear;
+  transition: background-color 0.2s linear;
 }
 
 .btn-shadow {
@@ -50,9 +50,6 @@ input[type='radio'] {
   accent-color: #664DE5;
 }
 
-.test {
-  outline: #664DE5;
-}
 
 @layer utilities {
   .max-container {

@@ -26,8 +26,10 @@ function Summary({fullName, email, phone, salary, updateFields}: SummaryDataProp
   }
 
   return (
-    <section className="">
-      <p>Check your information:</p>
+    <section className="w-full text-center">
+      <p className="my-[30px] text-[2em] open-sans">Check your information:</p>
+      <div className="flex justify-center w-full">
+      <div className="w-[80%] flex flex-col items-center">
       {isEditing ? 
         <NameForm fullName={fullName} updateFields={updateFields} /> 
         : 
@@ -48,7 +50,11 @@ function Summary({fullName, email, phone, salary, updateFields}: SummaryDataProp
         : 
         <p>Salary: {salary}</p>
       }
-      <p onClick={onClickHandler} className="bg-black w-[20px] h-[20px] rounded-full text-white">{isEditing ? "submit" : "edit"}</p>
+      </div>
+      </div>
+      
+      <button type="button" onClick={onClickHandler} className="bg-primary px-[16px] py-[8px] rounded-[8px] text-white">{isEditing ? "done" : "edit"}</button>
+      
     </section>
   )
 }

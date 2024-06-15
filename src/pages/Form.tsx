@@ -90,7 +90,7 @@ function Form() {
             </div>
             <div className="flex gap-5">
                 {!isFirstStep && <button type="button" onClick={back}>Back</button>}
-                <button type="submit">{isLastStep ? "Finish" : "Next"}</button>
+                <button type="submit">{isLastStep ? "Submit" : "Next"}</button>
             </div> 
         </form>
         <div className={isFinished ? "block" : "hidden"}>

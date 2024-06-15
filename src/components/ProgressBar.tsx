@@ -7,7 +7,7 @@ type ProgressBarProps = {
 
 function ProgressBar({steps, currentStepIndex}: ProgressBarProps) {
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center mb-[50px]">
         <ul className="flex gap-5">
             {steps.map((step, index) => (
                 <li className={`${currentStepIndex === index  || currentStepIndex > index ? "bg-primary  text-slate-50" : ""} 

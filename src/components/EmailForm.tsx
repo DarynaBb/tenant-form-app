@@ -10,7 +10,7 @@ type EmailFormProps = UserData & {
 
 function EmailForm({email, updateFields}:EmailFormProps) {
   return (
-    <FormWrapper title="Email">
+    <FormWrapper title="2. Email">
       <input 
       className="outline-primary-pale border-[1px] rounded-[6px] border-slate-200 py-[10px] text-[1.5em] p-[5px]"
       autoFocus 

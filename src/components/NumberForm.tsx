@@ -40,8 +40,8 @@ function NumberForm({phone, updateFields}: NumberFormProps) {
 
   return (
     <>
-        <FormWrapper title="Phone">
-          <PhoneInput className='outline-primary-pale' required defaultCountry="de" disableDialCodePrefill={true} placeholder="Enter your phone number" value={phone} onChange={(value) => updateFields({ phone: value })}/>
+        <FormWrapper title="3. Phone">
+          <PhoneInput className='test' required defaultCountry="de" disableDialCodePrefill={true} placeholder="Enter your phone number" value={phone} onChange={(value) => updateFields({ phone: value })}/>
           {!isNumberValid && <div className='mt-[10px] text-red-500'>Phone is not valid</div>}
         </FormWrapper>
         

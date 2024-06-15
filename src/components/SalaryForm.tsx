@@ -10,7 +10,7 @@ type SalaryFormProps = UserData & {
 
 function SalaryForm({salary, updateFields}:SalaryFormProps) {
   return (
-    <FormWrapper title="Salary">
+    <FormWrapper title="4. Salary">
         <fieldset className="flex flex-col gap-5 mt-[20px]">
             <div className="flex gap-4">
                 <input type="radio" value="0-1000" checked={salary === "0-1000"} onChange={e => updateFields({salary: e.target.value})} />

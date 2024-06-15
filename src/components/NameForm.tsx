@@ -10,7 +10,7 @@ type NameFormProps = UserData & {
 
 function NameForm({fullName, updateFields}: NameFormProps) {
   return (
-    <FormWrapper title="Full name">
+    <FormWrapper title="1. Full name">
       <input 
           className="outline-primary-pale border-[1px] rounded-[6px] border-slate-200 py-[10px] text-[1.5em] p-[5px]" 
           autoFocus 

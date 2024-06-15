@@ -36,7 +36,9 @@ input[type='radio'] {
   accent-color: #664DE5;
 }
 
-
+.test {
+  outline: #664DE5;
+}
 
 @layer utilities {
   .max-container {

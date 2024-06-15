@@ -69,7 +69,7 @@ function Form() {
             alert("Please, select your salary before submitting")
         } else {
           confetti({
-            particleCount: 150,
+            particleCount: 250,
             spread: 200
           });
             setIsFinished(true);

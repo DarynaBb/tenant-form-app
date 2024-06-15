@@ -1,13 +1,13 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.tsx'
-import './index.css'
-import { FormsContextProvider } from './context/FormsContext.tsx';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App.tsx";
+import "./index.css";
+import { FormsContextProvider } from "./context/FormsContext.tsx";
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
+ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <FormsContextProvider>
-            <App />
-        </FormsContextProvider>
-  </React.StrictMode>,
-)
+      <App />
+    </FormsContextProvider>
+  </React.StrictMode>
+);

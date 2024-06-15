@@ -51,7 +51,7 @@ function SalaryForm({ salary, position, updateFields }: SalaryFormProps) {
               checked={salary === range.value}
               onChange={(e) => updateFields({ salary: e.target.value })}
             />
-            <label className={`${textSize} cursor-pointer`} htmlFor={range.id}>
+            <label className={`${textSize} cursor-pointer inline-flex itmes-center`} htmlFor={range.id}>
               {range.label}
             </label>
           </div>

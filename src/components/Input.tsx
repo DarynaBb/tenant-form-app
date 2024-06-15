@@ -24,6 +24,7 @@ function Input({type, placeholder, value, onChange, className, pattern, position
           value={value} 
           onChange={onChange}
           pattern={pattern}
+          {...(position !== "summary" ? { autoFocus: true } : {})}
         />
     </div>
   )

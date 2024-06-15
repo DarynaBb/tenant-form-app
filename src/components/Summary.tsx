@@ -25,14 +25,14 @@ function Summary({fullName, email, phone, salary, updateFields}: SummaryDataProp
     const { isEditing } = context;
 
   return (
-    <section className="w-full">
-      <p className="my-[30px] text-[2.2em] open-sans font-bold">Please check your information before submitting</p>
-      <div className="flex w-full">
-        <div className="w-[80%] flex flex-col gap-3">
+    <section className="w-full flex flex-col gap-3 md:gap-5">
+      <p className="text-[1.6em] md:text-[3em] open-sans font-bold">Please check your information <br/> before submitting</p>
+      <div className="flex">
+        <div className=" flex flex-col gap-1 md:gap-3">
           {isEditing ? 
             <NameForm position="summary" fullName={fullName} updateFields={updateFields} /> 
             : 
-            <div className="flex gap-2 text-[1.8em]">
+            <div className="flex gap-2 text-[1.5em] md:text-[1.8em]">
               <p className="font-semibold">Name: </p>
               <p>{fullName}</p>
             </div>
@@ -40,7 +40,7 @@ function Summary({fullName, email, phone, salary, updateFields}: SummaryDataProp
           {isEditing ? 
             <EmailForm position="summary" email={email} updateFields={updateFields} />
             : 
-            <div className="flex gap-2 text-[1.8em]">
+            <div className="flex gap-2 text-[1.5em] md:text-[1.8em]">
               <p className="font-semibold">Email: </p>
               <p>{email}</p>
             </div>
@@ -48,7 +48,7 @@ function Summary({fullName, email, phone, salary, updateFields}: SummaryDataProp
           {isEditing ? 
             <NumberForm position="summary" phone={phone} updateFields={updateFields}/>
             : 
-            <div className="flex gap-2 text-[1.8em]">
+            <div className="flex gap-2 text-[1.5em] md:text-[1.8em]">
               <p className="font-semibold">Phone: </p>
               <p>{phone}</p>
             </div>
@@ -56,7 +56,7 @@ function Summary({fullName, email, phone, salary, updateFields}: SummaryDataProp
           {isEditing ? 
             <SalaryForm position="summary" salary={salary} updateFields={updateFields} />
             : 
-            <div className="flex gap-2 text-[1.8em]">
+            <div className="flex gap-2 text-[1.5em] md:text-[1.8em]">
               <p className="font-semibold">Salary: </p>
               <p>{salary} EUR/month</p>
             </div>

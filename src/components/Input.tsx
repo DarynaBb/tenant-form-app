@@ -13,7 +13,7 @@ type InputProps = {
 function Input({type, placeholder, value, onChange, className, pattern, position, label}: InputProps) {
   return (
     <div className="flex flex-col">
-        <label className={`${position === "summary" ? "text-[2em] mb-[10px]" : "text-[3em] mb-[20px]"} open-sans font-semibold `}>
+        <label className={`${position === "summary" ? "text-[2em] mb-[10px]" : "text-[2em] md:text-[3em] mb-[20px]"} open-sans font-semibold `}>
             {label}
         </label>
         <input 

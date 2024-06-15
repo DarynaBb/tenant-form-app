@@ -57,7 +57,7 @@ input[type='radio'] {
   }
 
   .padding-container {
-    @apply px-[10px] py-[15px];
+    @apply px-[20px] py-[15px];
   }
 
   .padding-x-container {

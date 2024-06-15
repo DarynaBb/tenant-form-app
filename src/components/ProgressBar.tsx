@@ -9,7 +9,7 @@ function ProgressBar({ steps, currentStepIndex }: ProgressBarProps) {
   return (
     <div className="flex justify-center mb-[50px]">
       <ul className="flex gap-5">
-        {steps.map((step, index) => (
+        {steps.map((_, index) => (
           <li
             className={`${
               currentStepIndex === index || currentStepIndex > index
@@ -27,12 +27,12 @@ function ProgressBar({ steps, currentStepIndex }: ProgressBarProps) {
                   ? "absolute w-5 h-[1px]  -right-[20px]"
                   : ""
               }
-                            ${
-                              currentStepIndex === index ||
-                              currentStepIndex > index
-                                ? "bg-primary bg-transition"
-                                : "bg-slate-200"
-                            }`}
+                ${
+                    currentStepIndex === index ||
+                    currentStepIndex > index
+                    ? "bg-primary bg-transition"
+                    : "bg-slate-200"
+                }`}
             />
           </li>
         ))}

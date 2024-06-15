@@ -10,7 +10,7 @@ import SuccesWindow from "../components/SuccesWindow";
 import { FormsContext } from "../context/FormsContext";
 import ProgressBar from "../components/ProgressBar";
 import Button from "../components/Button";
-import confetti from "https://esm.run/canvas-confetti@1";
+import confetti from 'canvas-confetti';
 
 type FormData = {
   fullName: string;

@@ -47,6 +47,19 @@ input[type="radio"] {
   accent-color: #664de5;
 }
 
+.input:focus {
+  outline-color: #664de580;
+}
+
+.input {
+  --tw-border-opacity: 1;
+  border: 1px solid rgb(226 232 240 / var(--tw-border-opacity)); 
+}
+
+.input:invalid {
+  outline-color: rgb(252 165 165); 
+}
+
 @layer utilities {
   .max-container {
     @apply mx-auto max-w-[1440px];

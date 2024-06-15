@@ -33,7 +33,7 @@ function Input({
           position === "summary"
             ? "py-[5px] md:text-[1.2em] px-[5px] min-w-[200px]"
             : ""
-          } outline-primary-pale border-[1px] rounded-[6px] border-slate-200 
+          }  input border-[1px] rounded-[6px] border-slate-200 
           py-[10px] md:text-[1.5em] px-[10px] min-w-[200px] md:min-w-[300px]
         `}
         required

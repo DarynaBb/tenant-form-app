@@ -30,7 +30,7 @@ function SalaryForm({ salary, position, updateFields }: SalaryFormProps) {
         <legend
           className={`${
             position === "summary"
-              ? "text-[1.6em] mb-[10px]"
+              ? "text-[1.4em] mb-[10px]"
               : "text-[2em] md:text-[3em] mb-[20px]"
           } open-sans font-semibold`}
         >

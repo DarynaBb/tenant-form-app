@@ -77,7 +77,7 @@ function Form() {
             setTimeout(() => {
                 navigate("/");
                 setIsFinished(false);
-            }, 2000);  
+            }, 3000);  
         }
       }
 
@@ -95,7 +95,7 @@ function Form() {
                 <div className="flex gap-4">
                 <Button className={isLastStep ? "block" : "hidden"} type="button" onClick={onClickHandler} text={isEditing ? "done" : "edit"}/>
                   {!isFirstStep && !isEditing && <Button type="button" onClick={back} text="Back"/>}
-                  <Button type="submit" text={isLastStep ? "Submit" : "Next"}/>
+                  {!isEditing && <Button type="submit" text={isLastStep ? "Submit" : "Next"}/>}
                 </div>
             </div>
           </div> 

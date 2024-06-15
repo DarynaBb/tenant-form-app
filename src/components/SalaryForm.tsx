@@ -12,8 +12,8 @@ function SalaryForm({salary, position, updateFields}:SalaryFormProps) {
     const textSize = `${position === "summary" ? "text-[1.6em]" : "text-[2em]"}`
   return (
     <>
-        <fieldset className={`flex flex-col ${position==="summary" ? "gap-2" : "gap-5"} mt-[20px] min-w-[300px]`}>
-            <legend className={`${position === "summary" ? "text-[2em] mb-[10px]" : "text-[3em] mb-[20px]"} open-sans`}>
+        <fieldset className={`flex flex-col ${position==="summary" ? "gap-2" : "gap-5"} min-w-[300px]`}>
+            <legend className={`${position === "summary" ? "text-[2em] mb-[10px]" : "text-[3em] mb-[20px]"} open-sans font-semibold`}>
                 Salary (per month, EUR)
             </legend>
             <div className={`flex ${position==="summary" ? "gap-2" : "gap-4"}`}>

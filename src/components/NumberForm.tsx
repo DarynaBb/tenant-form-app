@@ -1,6 +1,5 @@
 import Input from './Input';
 
-
 type UserData = {
     phone: string;
     position?: string
@@ -17,10 +16,10 @@ function NumberForm({phone, position, updateFields}: NumberFormProps) {
          <Input
             label="Phone"
             type="tel"
-            placeholder="Format: 123-456-7890"
+            placeholder="Format: 0123456789"
             value={phone}
             onChange={e => updateFields({ phone: e.target.value })}
-            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+            pattern="[0-9]{3}[0-9]{3}[0-9]{4}"
             position={position}
           />
   )

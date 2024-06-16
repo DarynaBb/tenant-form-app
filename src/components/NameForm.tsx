@@ -18,6 +18,7 @@ function NameForm({ fullName, position, updateFields }: NameFormProps) {
       value={fullName}
       onChange={(e) => updateFields({ fullName: e.target.value })}
       label="Full name"
+      pattern="^\s*\S+(?:\s+\S+)+\s*$"
     />
   );
 }

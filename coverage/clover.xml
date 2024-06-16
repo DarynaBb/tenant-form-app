@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1718536766170" clover="3.2.0">
+  <project timestamp="1718536766170" name="All files">
+    <metrics statements="9" coveredstatements="9" conditionals="14" coveredconditionals="7" methods="4" coveredmethods="4" elements="27" coveredelements="20" complexity="0" loc="9" ncloc="9" packages="2" files="3" classes="3"/>
+    <package name="components">
+      <metrics statements="8" coveredstatements="8" conditionals="14" coveredconditionals="7" methods="4" coveredmethods="4"/>
+      <file name="Input.tsx" path="/Users/darinabilenko/Desktop/Buena/tenant-form-app/src/components/Input.tsx">
+        <metrics statements="2" coveredstatements="2" conditionals="6" coveredconditionals="3" methods="1" coveredmethods="1"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="51" count="1" type="stmt"/>
+      </file>
+      <file name="SalaryForm.tsx" path="/Users/darinabilenko/Desktop/Buena/tenant-form-app/src/components/SalaryForm.tsx">
+        <metrics statements="6" coveredstatements="6" conditionals="8" coveredconditionals="4" methods="3" coveredmethods="3"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="23" count="2" type="stmt"/>
+        <line num="27" count="2" type="stmt"/>
+        <line num="45" count="10" type="stmt"/>
+        <line num="56" count="1" type="stmt"/>
+        <line num="68" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="constants">
+      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="constants.ts" path="/Users/darinabilenko/Desktop/Buena/tenant-form-app/src/constants/constants.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>

@@ -14,10 +14,10 @@ function NumberForm({ phone, position, updateFields }: NumberFormProps) {
     <Input
       label="Phone"
       type="tel"
-      placeholder="Format: 0123-456-78-90"
+      placeholder="Format: 01234567890"
       value={phone}
       onChange={(e) => updateFields({ phone: e.target.value })}
-      pattern="[0-9]{4}-[0-9]{3}-[0-9]{2}-[0-9]{2}"
+      pattern="[0-9]{11}"
       position={position}
     />
   );

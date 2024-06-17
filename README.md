@@ -15,4 +15,4 @@ To get started with this project, follow the steps below:
 
 The application is deployed using Vercel. The deployment is done automatically when changes are pushed to the `main` branch.
 
-It could be found [here](tenant-form-app.vercel.app).
+It could be found [here](https://tenant-form-app.vercel.app/).
